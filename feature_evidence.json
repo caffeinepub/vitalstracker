@@ -2,12 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-implement-a-continuous-autonomous-vitals-monitoring-service-on-the-frontend-that-simulates-realistic-in-app-sensor-readings-heart-rate-systolic-diastolic-blood-pressure-spo2-body-temperature-respiratory-rate-every-30-seconds-and-automatically-submits-each-reading-to-the-backend-no-user-interaction-required",
-      "featureTitle": "Implement a continuous autonomous vitals monitoring service on the frontend that simulates realistic in-app sensor readings (heart rate, systolic/diastolic blood pressure, SpO2, body temperature, respiratory rate) every 30 seconds and automatically submits each reading to the backend — no user interaction required.",
+      "featureId": "feature-create-a-suggestionbox-component-that-appears-persistently-at-the-bottom-of-the-app-inside-the-layout-shell-below-the-main-page-content-it-must-display-a-rotating-set-of-healthy-activity-suggestions-e-g-take-a-10-minute-walk-do-5-minutes-of-deep-breathing-drink-a-glass-of-water-stand-up-and-stretch-the-suggestions-should-cycle-automatically-every-15-20-seconds-and-also-include-a-next-suggestion-button-so-the-user-can-advance-manually-style-the-component-to-match-the-existing-medical-grade-dark-theme-dark-navy-charcoal-background-teal-accent-text-and-border-clinical-sans-serif-font-with-a-subtle-glow-consistent-with-the-existing-metric-cards",
+      "featureTitle": "Create a SuggestionBox component that appears persistently at the bottom of the app (inside the Layout shell, below the main page content). It must display a rotating set of healthy activity suggestions (e.g., 'Take a 10-minute walk', 'Do 5 minutes of deep breathing', 'Drink a glass of water', 'Stand up and stretch'). The suggestions should cycle automatically every 15–20 seconds and also include a 'Next Suggestion' button so the user can advance manually. Style the component to match the existing medical-grade dark theme (dark navy/charcoal background, teal accent text and border, clinical sans-serif font) with a subtle glow consistent with the existing metric cards.",
       "files": [
         "frontend/src/components/Layout.tsx",
-        "frontend/src/hooks/useAutonomousMonitor.ts",
-        "frontend/src/utils/vitalsSimulator.ts"
+        "frontend/src/components/SuggestionBox.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -17,43 +16,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-8"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-update-the-dashboard-page-to-reflect-fully-autonomous-operation-remove-or-de-emphasize-the-manual-log-entry-call-to-action-and-surface-the-autonomous-monitoring-status-last-auto-recorded-time-next-recording-countdown-as-a-prominent-live-indicator",
-      "featureTitle": "Update the Dashboard page to reflect fully autonomous operation: remove or de-emphasize the manual log entry call-to-action, and surface the autonomous monitoring status (last auto-recorded time, next recording countdown) as a prominent live indicator.",
-      "files": [
-        "frontend/src/pages/Dashboard.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-9"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-update-the-app-navigation-and-layout-to-add-a-monitoring-status-pill-e-g-monitoring-in-teal-visible-on-all-pages-confirming-the-autonomous-loop-is-active-the-pill-must-pulse-to-indicate-live-activity",
-      "featureTitle": "Update the app navigation and Layout to add a monitoring status pill (e.g., '● MONITORING' in teal) visible on all pages, confirming the autonomous loop is active. The pill must pulse to indicate live activity.",
-      "files": [
-        "frontend/src/components/Layout.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-10"
+        "REQ-11"
       ],
       "confidence": "high"
     }

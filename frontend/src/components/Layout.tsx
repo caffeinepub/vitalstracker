@@ -1,8 +1,9 @@
 import { Link, useRouterState } from '@tanstack/react-router';
-import { Activity, LayoutDashboard, History, Menu, X, Radio } from 'lucide-react';
+import { Activity, LayoutDashboard, History, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useAutonomousMonitor } from '../hooks/useAutonomousMonitor';
+import { SuggestionBox } from './SuggestionBox';
 
 const navItems = [
   { path: '/', label: 'Dashboard', icon: LayoutDashboard },
@@ -106,6 +107,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <main className="flex-1">
         {children}
       </main>
+
+      {/* Healthy Activity Suggestion Box */}
+      <SuggestionBox />
 
       {/* Footer */}
       <footer className="border-t border-border mt-auto">

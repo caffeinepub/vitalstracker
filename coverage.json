@@ -1,77 +1,37 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-27T20:13:38.640Z",
+  "generatedAt": "2026-02-27T20:19:21.877Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 4,
-    "implemented": 3,
+    "total": 1,
+    "implemented": 1,
     "items": [
       {
-        "id": "REQ-10",
-        "summary": "Update the app navigation and Layout to add a monitoring status pill (e.g., '● MONITORING' in teal) visible on all pages, confirming the autonomous loop is active. The pill must pulse to indicate live activity.",
+        "id": "REQ-11",
+        "summary": "Create a SuggestionBox component that appears persistently at the bottom of the app (inside the Layout shell, below the main page content). It must display a rotating set of healthy activity suggestions (e.g., 'Take a 10-minute walk', 'Do 5 minutes of deep breathing', 'Drink a glass of water', 'Stand up and stretch'). The suggestions should cycle automatically every 15–20 seconds and also include a 'Next Suggestion' button so the user can advance manually. Style the component to match the existing medical-grade dark theme (dark navy/charcoal background, teal accent text and border, clinical sans-serif font) with a subtle glow consistent with the existing metric cards.",
         "status": "implemented",
         "plannedFiles": [
+          "frontend/src/components/SuggestionBox.tsx",
           "frontend/src/components/Layout.tsx"
         ],
         "matchedFiles": [
+          "frontend/src/components/SuggestionBox.tsx",
           "frontend/src/components/Layout.tsx"
-        ]
-      },
-      {
-        "id": "REQ-7",
-        "summary": "Add a backend method `addSimulatedReading` (or reuse `addVitalsReading`) that accepts an auto-generated vitals record and stores it. Ensure the actor can receive readings written by the frontend's autonomous monitoring loop without any user action.",
-        "status": "unknown",
-        "plannedFiles": [],
-        "matchedFiles": []
-      },
-      {
-        "id": "REQ-8",
-        "summary": "Implement a continuous autonomous vitals monitoring service on the frontend that simulates realistic in-app sensor readings (heart rate, systolic/diastolic blood pressure, SpO2, body temperature, respiratory rate) every 30 seconds and automatically submits each reading to the backend — no user interaction required.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/hooks/useAutonomousMonitor.ts",
-          "frontend/src/utils/vitalsSimulator.ts",
-          "frontend/src/components/Layout.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/hooks/useAutonomousMonitor.ts",
-          "frontend/src/utils/vitalsSimulator.ts",
-          "frontend/src/components/Layout.tsx"
-        ]
-      },
-      {
-        "id": "REQ-9",
-        "summary": "Update the Dashboard page to reflect fully autonomous operation: remove or de-emphasize the manual log entry call-to-action, and surface the autonomous monitoring status (last auto-recorded time, next recording countdown) as a prominent live indicator.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/pages/Dashboard.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/pages/Dashboard.tsx"
         ]
       }
     ]
   },
   "changedFiles": [
-    "backend/main.mo",
     "build-request.json",
-    "build-template/README.md",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/App.tsx",
-    "frontend/src/backend.d.ts",
-    "frontend/src/backend.ts",
     "frontend/src/components/Layout.tsx",
-    "frontend/src/declarations/backend.did.d.ts",
-    "frontend/src/declarations/backend.did.js",
-    "frontend/src/hooks/useAutonomousMonitor.ts",
-    "frontend/src/pages/Dashboard.tsx",
-    "frontend/src/utils/vitalsSimulator.ts",
+    "frontend/src/components/SuggestionBox.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

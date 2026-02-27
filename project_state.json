@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
+  "projectStateVersion": 7,
   "summary": "A 24/7/365 vitals tracking app that autonomously monitors and records an individual's health metrics continuously via the app itself, without requiring manual/external logging.",
   "architectural_notes": [
     "App must support continuous background monitoring of vitals (24/7/365).",
@@ -73,6 +73,14 @@
         "REQ-10"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-create-a-suggestionbox-component-that-appears-persistently-at-the-bottom-of-the-app-inside-the-layout-shell-below-the-main-page-content-it-must-display-a-rotating-set-of-healthy-activity-suggestions-e-g-take-a-10-minute-walk-do-5-minutes-of-deep-breathing-drink-a-glass-of-water-stand-up-and-stretch-the-suggestions-should-cycle-automatically-every-15-20-seconds-and-also-include-a-next-suggestion-button-so-the-user-can-advance-manually-style-the-component-to-match-the-existing-medical-grade-dark-theme-dark-navy-charcoal-background-teal-accent-text-and-border-clinical-sans-serif-font-with-a-subtle-glow-consistent-with-the-existing-metric-cards",
+      "title": "Create a SuggestionBox component that appears persistently at the bottom of the app (inside the Layout shell, below the main page content). It must display a rotating set of healthy activity suggestions (e.g., 'Take a 10-minute walk', 'Do 5 minutes of deep breathing', 'Drink a glass of water', 'Stand up and stretch'). The suggestions should cycle automatically every 15–20 seconds and also include a 'Next Suggestion' button so the user can advance manually. Style the component to match the existing medical-grade dark theme (dark navy/charcoal background, teal accent text and border, clinical sans-serif font) with a subtle glow consistent with the existing metric cards.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -120,6 +128,12 @@
       "reqIds": [
         "REQ-7"
       ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add a suggestion box at the bottom of the app that displays healthy activity suggestions based on the user's current vitals or general wellness tips.",
+      "reqIds": [],
       "status": "pending"
     }
   ],

@@ -1,13 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Make VitalWatch fully autonomous by continuously simulating and auto-recording vitals every 30 seconds without any user interaction.
+**Goal:** Add a persistent healthy activity suggestion box to the bottom of the app layout in VitalWatch 24/7.
 
 **Planned changes:**
-- Add backend support (reuse or extend `addVitalsReading`) to accept programmatically generated vitals records with all required fields
-- Implement a `useAutonomousMonitor` custom hook that runs a background loop every 30 seconds, generating physiologically plausible vitals readings and submitting them to the backend automatically
-- Mount the autonomous monitoring loop at the root layout level so it persists across all page navigations
-- Add a teal pulsing "● MONITORING" status pill to the sticky header visible on all pages; pill turns grey if the loop errors
-- Update the Dashboard to show a "Last recorded" timestamp and a live countdown to the next recording, and remove or replace the manual log CTA with messaging that monitoring is automatic
+- Create a `SuggestionBox` component with at least 10 diverse healthy activity suggestions (hydration, movement, breathing, posture, rest, etc.)
+- Suggestions rotate automatically every 15–20 seconds and can be manually advanced via a "Next Suggestion" button
+- Component is added to the Layout shell so it appears on every page without modifying individual pages
+- Style matches the existing dark medical-grade theme: dark navy/charcoal background, teal accent text and border, subtle glow consistent with metric cards
 
-**User-visible outcome:** The app automatically measures and records vitals every 30 seconds from the moment it loads. Users see a live pulsing monitoring indicator in the header and a countdown timer on the dashboard — no manual logging required.
+**User-visible outcome:** A suggestion box is visible at the bottom of every page, cycling through healthy activity tips automatically, with a button to skip to the next suggestion manually.
