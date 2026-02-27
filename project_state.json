@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "A 24/7/365 vitals tracking app that autonomously monitors and records an individual's health metrics continuously via the app itself, without requiring manual/external logging.",
+  "architectural_notes": [
+    "App must support continuous background monitoring of vitals (24/7/365).",
+    "Vitals to track may include heart rate, blood pressure, temperature, SpO2, respiration rate.",
+    "App must autonomously measure and record vitals continuously without user-initiated manual entry — passive sensor-based or simulated continuous monitoring required."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-build-a-live-dashboard-page-that-displays-the-individual-s-most-recent-vitals-reading-show-each-vital-heart-rate-blood-pressure-spo2-temperature-respiratory-rate-as-a-prominent-metric-card-with-its-value-unit-and-a-status-indicator-normal-warning-critical-based-on-clinically-accepted-reference-ranges",
+      "title": "Build a live dashboard page that displays the individual's most recent vitals reading. Show each vital (heart rate, blood pressure, SpO2, temperature, respiratory rate) as a prominent metric card with its value, unit, and a status indicator (normal / warning / critical) based on clinically accepted reference ranges.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-manual-vitals-entry-form-that-allows-the-user-to-submit-a-new-vitals-reading-at-any-time-the-form-must-validate-all-inputs-against-physiologically-plausible-ranges-before-submission-and-display-inline-error-messages-for-invalid-values",
+      "title": "Implement a manual vitals entry form that allows the user to submit a new vitals reading at any time. The form must validate all inputs against physiologically plausible ranges before submission and display inline error messages for invalid values.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-historical-vitals-log-page-that-displays-all-past-readings-in-a-scrollable-table-sortable-by-timestamp-newest-first-by-default-include-a-date-range-filter-to-narrow-results-additionally-render-a-line-chart-for-each-vital-sign-showing-its-trend-over-the-selected-time-range",
+      "title": "Build a historical vitals log page that displays all past readings in a scrollable table, sortable by timestamp (newest first by default). Include a date-range filter to narrow results. Additionally, render a line chart for each vital sign showing its trend over the selected time range.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-in-app-alert-banner-system-that-evaluates-the-latest-vitals-reading-and-displays-a-prominent-dismissible-alert-when-any-vital-is-outside-normal-reference-ranges-each-alert-must-name-the-specific-vital-its-current-value-and-whether-the-status-is-warning-or-critical",
+      "title": "Implement an in-app alert banner system that evaluates the latest vitals reading and displays a prominent dismissible alert when any vital is outside normal reference ranges. Each alert must name the specific vital, its current value, and whether the status is 'warning' or 'critical'.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-clean-medical-grade-visual-theme-across-the-entire-app-dark-navy-charcoal-backgrounds-with-crisp-white-and-teal-green-accent-colors-monospaced-or-clinical-sans-serif-typography-generous-whitespace-and-subtle-glowing-metric-cards-navigation-must-include-clearly-labeled-links-to-dashboard-log-entry-and-history-pages",
+      "title": "Apply a clean medical-grade visual theme across the entire app: dark navy/charcoal backgrounds with crisp white and teal/green accent colors, monospaced or clinical sans-serif typography, generous whitespace, and subtle glowing metric cards. Navigation must include clearly labeled links to Dashboard, Log Entry, and History pages.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-continuous-autonomous-vitals-monitoring-service-on-the-frontend-that-simulates-realistic-in-app-sensor-readings-heart-rate-systolic-diastolic-blood-pressure-spo2-body-temperature-respiratory-rate-every-30-seconds-and-automatically-submits-each-reading-to-the-backend-no-user-interaction-required",
+      "title": "Implement a continuous autonomous vitals monitoring service on the frontend that simulates realistic in-app sensor readings (heart rate, systolic/diastolic blood pressure, SpO2, body temperature, respiratory rate) every 30 seconds and automatically submits each reading to the backend — no user interaction required.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-dashboard-page-to-reflect-fully-autonomous-operation-remove-or-de-emphasize-the-manual-log-entry-call-to-action-and-surface-the-autonomous-monitoring-status-last-auto-recorded-time-next-recording-countdown-as-a-prominent-live-indicator",
+      "title": "Update the Dashboard page to reflect fully autonomous operation: remove or de-emphasize the manual log entry call-to-action, and surface the autonomous monitoring status (last auto-recorded time, next recording countdown) as a prominent live indicator.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-app-navigation-and-layout-to-add-a-monitoring-status-pill-e-g-monitoring-in-teal-visible-on-all-pages-confirming-the-autonomous-loop-is-active-the-pill-must-pulse-to-indicate-live-activity",
+      "title": "Update the app navigation and Layout to add a monitoring status pill (e.g., '● MONITORING' in teal) visible on all pages, confirming the autonomous loop is active. The pill must pulse to indicate live activity.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Continuous 24/7/365 vitals tracking for an individual",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Dashboard to display real-time vitals data",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Historical vitals data logging and viewing",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Alerts/notifications for abnormal vital readings",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Create a backend data model and actor to store individual vitals records. Each record must include: timestamp, heart rate (bpm), blood pressure (systolic/diastolic mmHg), blood oxygen saturation (SpO2 %), body temperature (°F/°C), and respiratory rate (breaths/min). Expose CRUD operations: addVitalsReading, getLatestReading, getReadingsByDateRange, getAllReadings.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Autonomous in-app continuous vitals monitoring: the app itself measures and records vitals automatically in the background without requiring the user to manually log readings.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add a backend method `addSimulatedReading` (or reuse `addVitalsReading`) that accepts an auto-generated vitals record and stores it. Ensure the actor can receive readings written by the frontend's autonomous monitoring loop without any user action.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "VitalsTracker",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

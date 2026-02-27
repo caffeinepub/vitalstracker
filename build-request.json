@@ -1,0 +1,98 @@
+{
+  "kind": "build_request",
+  "title": "Autonomous continuous vitals monitoring — simulate & auto-record readings in-app",
+  "projectName": "VitalWatch",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "text": "Add a backend method `addSimulatedReading` (or reuse `addVitalsReading`) that accepts an auto-generated vitals record and stores it. Ensure the actor can receive readings written by the frontend's autonomous monitoring loop without any user action.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "the app constantly measures and keeps try of one's vitals without the need for externally 'logging' of vitals"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The existing `addVitalsReading` method (or a new dedicated method) accepts programmatically generated readings with all required fields (timestamp, heart rate, blood pressure, SpO2, temperature, respiratory rate).",
+        "Readings written by the autonomous loop are persisted and retrievable via `getLatestReading` and `getAllReadings`."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Implement a continuous autonomous vitals monitoring service on the frontend that simulates realistic in-app sensor readings (heart rate, systolic/diastolic blood pressure, SpO2, body temperature, respiratory rate) every 30 seconds and automatically submits each reading to the backend — no user interaction required.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "the app constantly measures and keeps try of one's vitals without the need for externally 'logging' of vitals"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A background service (e.g., custom hook `useAutonomousMonitor`) starts automatically when the app loads and fires every 30 seconds.",
+        "Each cycle generates a plausible vitals reading using a realistic simulation algorithm (values within physiological ranges, with slight natural variation each cycle).",
+        "Each auto-generated reading is submitted to the backend via the existing mutation hook without any user prompt or button click.",
+        "The monitoring loop persists across page navigation (mounted at the root layout level).",
+        "A visible 'Monitoring Active' status indicator with a pulsing animation is shown in the app header or dashboard to confirm autonomous monitoring is running."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Update the Dashboard page to reflect fully autonomous operation: remove or de-emphasize the manual log entry call-to-action, and surface the autonomous monitoring status (last auto-recorded time, next recording countdown) as a prominent live indicator.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "the app constantly measures and keeps try of one's vitals without the need for externally 'logging' of vitals"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard shows a 'Last recorded' timestamp that updates automatically after each autonomous reading.",
+        "A live countdown timer shows seconds until the next automatic recording.",
+        "Any CTA that previously prompted the user to manually log a reading is removed or replaced with messaging that monitoring is automatic."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Update the app navigation and Layout to add a monitoring status pill (e.g., '● MONITORING' in teal) visible on all pages, confirming the autonomous loop is active. The pill must pulse to indicate live activity.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "the app constantly measures and keeps try of one's vitals without the need for externally 'logging' of vitals"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A teal pulsing status pill labeled 'MONITORING' or '● LIVE' is present in the sticky header across all pages.",
+        "The pill uses the existing pulse animation utility class defined in `frontend/src/index.css`.",
+        "The pill turns grey/inactive if the monitoring loop errors out or is paused."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui.",
+    "All Motoko logic must remain in the single actor at backend/main.mo.",
+    "Vitals simulation must produce physiologically plausible values (within the same ranges used by existing validation logic in vitalsThresholds.ts).",
+    "The autonomous monitoring loop must be mounted at the root layout level (Layout.tsx or App.tsx) so it persists across route changes."
+  ],
+  "nonGoals": [
+    "Real hardware sensor integration (Bluetooth, device APIs) — simulation only.",
+    "User-controlled start/stop toggle for the monitoring loop.",
+    "Changes to the History page table or chart components.",
+    "Changes to the manual LogEntry form (retain it as a supplementary option).",
+    "Push notifications or external alert delivery."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

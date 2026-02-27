@@ -1,0 +1,61 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-a-continuous-autonomous-vitals-monitoring-service-on-the-frontend-that-simulates-realistic-in-app-sensor-readings-heart-rate-systolic-diastolic-blood-pressure-spo2-body-temperature-respiratory-rate-every-30-seconds-and-automatically-submits-each-reading-to-the-backend-no-user-interaction-required",
+      "featureTitle": "Implement a continuous autonomous vitals monitoring service on the frontend that simulates realistic in-app sensor readings (heart rate, systolic/diastolic blood pressure, SpO2, body temperature, respiratory rate) every 30 seconds and automatically submits each reading to the backend — no user interaction required.",
+      "files": [
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/hooks/useAutonomousMonitor.ts",
+        "frontend/src/utils/vitalsSimulator.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-dashboard-page-to-reflect-fully-autonomous-operation-remove-or-de-emphasize-the-manual-log-entry-call-to-action-and-surface-the-autonomous-monitoring-status-last-auto-recorded-time-next-recording-countdown-as-a-prominent-live-indicator",
+      "featureTitle": "Update the Dashboard page to reflect fully autonomous operation: remove or de-emphasize the manual log entry call-to-action, and surface the autonomous monitoring status (last auto-recorded time, next recording countdown) as a prominent live indicator.",
+      "files": [
+        "frontend/src/pages/Dashboard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-app-navigation-and-layout-to-add-a-monitoring-status-pill-e-g-monitoring-in-teal-visible-on-all-pages-confirming-the-autonomous-loop-is-active-the-pill-must-pulse-to-indicate-live-activity",
+      "featureTitle": "Update the app navigation and Layout to add a monitoring status pill (e.g., '● MONITORING' in teal) visible on all pages, confirming the autonomous loop is active. The pill must pulse to indicate live activity.",
+      "files": [
+        "frontend/src/components/Layout.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

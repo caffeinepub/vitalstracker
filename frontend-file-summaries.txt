@@ -1,0 +1,17 @@
+{
+  "frontend/src/index.css": "Global styles with medical-grade dark navy/teal OKLCH color system, Inter and JetBrains Mono fonts, status color tokens, card glow utilities, and pulse animation.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Inter/JetBrains Mono fonts, teal/navy/status color tokens, custom box shadows for card glow effects, and fade-in animation.",
+  "frontend/src/utils/vitalsThresholds.ts": "Clinical reference range thresholds and status evaluation functions for all six vital signs, plus VITAL_INFOS metadata array.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for fetching latest reading (with 30s polling), all readings, date-range filtered readings, and adding a new vitals reading with cache invalidation.",
+  "frontend/src/components/Layout.tsx": "App shell with sticky header, logo, responsive navigation (Dashboard + History only), a teal pulsing \"● MONITORING\" status pill that reflects autonomous monitor state, and footer with attribution. Mounts useAutonomousMonitor at the layout level so the loop persists across all routes.",
+  "frontend/src/components/VitalCard.tsx": "Reusable metric card displaying vital name, value, unit, status badge (normal/warning/critical), reference range, and loading skeleton.",
+  "frontend/src/components/VitalsAlertBanner.tsx": "Dismissible alert banner for out-of-range vitals with red (critical) and amber (warning) color schemes, plus AlertsContainer for rendering multiple alerts.",
+  "frontend/src/components/VitalsTable.tsx": "Sortable, scrollable table of vitals readings with color-coded values, overall status badges, and timestamp formatting.",
+  "frontend/src/components/VitalsTrendChart.tsx": "Recharts line chart for a single vital sign over time with reference lines, custom tooltip, and consistent medical theme styling.",
+  "frontend/src/pages/Dashboard.tsx": "Live dashboard showing an Autonomous Monitoring Status card with last-recorded time-ago and live countdown to next reading, six VitalCard metrics, alert banners, and overall status summary — manual log CTA removed in favour of fully automatic monitoring messaging.",
+  "frontend/src/pages/LogEntry.tsx": "Manual vitals entry form with per-field validation, inline error messages, success confirmation, backend submission via mutation, and clinical reference ranges panel.",
+  "frontend/src/pages/History.tsx": "History page with date-range filter, tabbed table/chart views, sortable VitalsTable, and six VitalsTrendChart components for trend analysis.",
+  "frontend/src/App.tsx": "TanStack Router setup with root layout route wrapping Dashboard (/), LogEntry (/log), and History (/history) pages inside a QueryClientProvider.",
+  "frontend/src/utils/vitalsSimulator.ts": "New utility module that generates physiologically plausible simulated vitals readings with smooth drift between cycles, mean-reversion to keep values within normal ranges, and nanosecond timestamp generation.",
+  "frontend/src/hooks/useAutonomousMonitor.ts": "Custom hook that starts a 30-second autonomous monitoring loop on mount, submits simulated readings to the backend via the actor, invalidates React Query caches after each submission, and exposes monitoring state (isActive, lastRecordedAt, nextRecordingIn, error) for UI display."
+}
